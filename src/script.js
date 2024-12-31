@@ -132,25 +132,27 @@ document.addEventListener('mousemove', e => {
 });
 
 // Play and pause buttons
+const buttonContainer = document.createElement('div');
+buttonContainer.style.position = 'absolute';
+buttonContainer.style.bottom = '50px';
+buttonContainer.style.left = '50%';
+buttonContainer.style.transform = 'translateX(-50%)';
+buttonContainer.style.display = 'flex';
+buttonContainer.style.justifyContent = 'space-between';
+buttonContainer.style.width = '200px';
+document.body.appendChild(buttonContainer);
+
 const playButton = document.createElement('button');
 playButton.innerText = 'Play';
-playButton.style.position = 'absolute';
-playButton.style.bottom = '10%';
-playButton.style.left = '46%';
-playButton.style.transform = 'translateX(-50%)';
 playButton.style.textShadow = '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff, 0 0 150px #fff';
-playButton.style.padding = '5px'; // Changed padding to 5px
-document.body.appendChild(playButton);
+playButton.style.padding = '5px';
+buttonContainer.appendChild(playButton);
 
 const pauseButton = document.createElement('button');
 pauseButton.innerText = 'Pause';
-pauseButton.style.position = 'absolute';
-pauseButton.style.bottom = '10%';
-pauseButton.style.left = '54%';
-pauseButton.style.transform = 'translateX(-50%)';
 pauseButton.style.textShadow = '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff, 0 0 150px #fff';
-pauseButton.style.padding = '5px'; // Changed padding to 5px
-document.body.appendChild(pauseButton);
+pauseButton.style.padding = '5px';
+buttonContainer.appendChild(pauseButton);
 
 playButton.addEventListener('click', () => {
 	if (!sound.isPlaying) {
