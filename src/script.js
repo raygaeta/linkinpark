@@ -102,6 +102,10 @@ const analyser = new THREE.AudioAnalyser(sound, 2048);
 
 // GUI setup
 const gui = new GUI();
+gui.domElement.style.position = 'absolute'; // Set GUI position to absolute
+gui.domElement.style.left = '50%'; // Center GUI horizontally
+gui.domElement.style.transform = 'translateX(-50%)'; // Adjust for centering
+
 const colorsFolder = gui.addFolder('Colors');
 colorsFolder.add(params, 'red', 0, 1).onChange(value => uniforms.u_red.value = Number(value));
 colorsFolder.add(params, 'green', 0, 1).onChange(value => uniforms.u_green.value = Number(value));
